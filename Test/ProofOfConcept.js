@@ -1,0 +1,1 @@
+ioc.registerModule('RequirementA', '/Test/RequirementsA.js');
