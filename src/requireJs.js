@@ -1,3 +1,12 @@
+/**
+ * Defines the dynamically changeable configuration
+ * @type requireJsConfig
+ */
+requireJsConfig = {
+    'scpriptBase' : "",
+    'devMode' : false
+};
+
 function requireJs(){
     var moduleIdentifier = "MODULE";
     var functionIdentifier = "FUNCTION";
@@ -46,24 +55,23 @@ function requireJs(){
     };
 
     function normalizeFilePath(filePath){
-        filePath = jLazyConfiguration.scpriptBase + filePath;
+        filePath = requireJsConfig.scpriptBase + filePath;
         if(filePath.match(".js$")){
             filePath = filePath + ".js";
         }
         return filePath;
     };
 
-    registerFunction = function(functionName, functionFile){
-        itemList.push(
-            new {
-                name : functionName,
-                file : functionFile,
-                loaded : false,
-                identifier : functionIdentifier
+    this.registerFunction = function(functionName, functionFile){
+        itemList.push({
+                'name' : functionName,
+                'file' : functionFile,
+                'loaded' : false,
+                'identifier' : functionIdentifier
             });
     };
 
-    registerModule = function(moduleName, moduleFile){
+    this.registerModule = function(moduleName, moduleFile){
         itemList.push(
             new {
                 name : moduleName,
@@ -73,7 +81,7 @@ function requireJs(){
             });
     };
 
-    load = function(name){
+    this.load = function(name){
         if(existsInList(moduleIdentifier, name)){
             loadModule(name);
         }
@@ -82,7 +90,7 @@ function requireJs(){
         }
     };
 
-    loadFunction = function(functionName){
+    this.loadFunction = function(functionName){
         if(existsInList(functionIdentifier, functionName)){
             return;
         }
@@ -94,7 +102,7 @@ function requireJs(){
         item.loaded = true;
     };
 
-    loadModule = function(moduleName){
+    this.loadModule = function(moduleName){
         if(existsInList(moduleIdentifier, moduleName)){
             return;
         }
@@ -106,3 +114,6 @@ function requireJs(){
         item.loaded = true;
     };
 }
+
+window.ioc = new requireJs();
+window.register = ioc.registerFunction;

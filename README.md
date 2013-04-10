@@ -19,3 +19,16 @@ This is my point. Me writing this has to know that I need **RequirementA** and *
 ## The solution?? ##
 
 I do not like to rely on the html to load up my javascript environment correctly. I like to let the java script state what it needs. 
+
+	<script type="text/javascript">
+		requireJs().register('RequirementA', '/Scripts/RequirementA.js');
+		requireJs().register('RequirementB', '/Scripts/RequirementA.js');
+		
+		// Some JS script not depended on the two JS files
+
+		requireJs().load('RequirementA');
+		
+		// now you can use any functions defined in **RequirementA.js**
+	</script>
+
+This way you can add od remove dependencies from your page specific JS file without having to change the underlying *HTML* file.
