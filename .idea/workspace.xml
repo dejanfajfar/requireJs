@@ -23,7 +23,7 @@
       <file leaf-file-name="requireJs.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/requireJs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="55" selection-start="852" selection-end="852" vertical-scroll-proportion="-0.27929902">
+            <state line="6" column="20" selection-start="149" selection-end="149" vertical-scroll-proportion="0.11171961">
               <folding />
             </state>
           </provider>
@@ -32,7 +32,7 @@
       <file leaf-file-name="Test.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test/Test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="30" selection-start="490" selection-end="490" vertical-scroll-proportion="-8.5">
+            <state line="13" column="27" selection-start="487" selection-end="487" vertical-scroll-proportion="-8.5">
               <folding />
             </state>
           </provider>
@@ -71,8 +71,8 @@
       <list>
         <option value="$PROJECT_DIR$/Test/RequirementA.js" />
         <option value="$PROJECT_DIR$/Test/ProofOfConcept.js" />
-        <option value="$PROJECT_DIR$/src/requireJs.js" />
         <option value="$PROJECT_DIR$/Test/Test.html" />
+        <option value="$PROJECT_DIR$/src/requireJs.js" />
       </list>
     </option>
   </component>
@@ -321,13 +321,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/ProofOfConcept.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="32" selection-start="32" selection-end="32" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Test/RequirementA.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="1" selection-end="1" vertical-scroll-proportion="0.0">
@@ -335,16 +328,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Test/ProofOfConcept.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="32" selection-start="32" selection-end="32" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Test/Test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="30" selection-start="490" selection-end="490" vertical-scroll-proportion="-8.5">
+        <state line="13" column="27" selection-start="487" selection-end="487" vertical-scroll-proportion="-8.5">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/requireJs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="55" selection-start="852" selection-end="852" vertical-scroll-proportion="-0.27929902">
+        <state line="6" column="20" selection-start="149" selection-end="149" vertical-scroll-proportion="0.11171961">
           <folding />
         </state>
       </provider>

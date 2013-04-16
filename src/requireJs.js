@@ -4,7 +4,7 @@
  */
 requireJsConfig = {
     'scpriptBase' : "",
-    'devMode' : false
+    'devMode' : true
 };
 
 function requireJs(){
@@ -32,24 +32,27 @@ function requireJs(){
         return null;
     };
 
-    // Determines if the given file ius already loaded
-    function isFileLoaded(filePath){
-        loadedFiles.forEach(
-            function(element, index, array){
-                if(element == filePath){
-                    return true;
-                }
-            }
-        );
-        return false;
-    };
+    /**
+     *
+     * @param filePath
+     */
+    function LoadFile(filePath){
+        var fileIndex = loadedFiles.indexOf(filePath)
 
-    function loadAndEvaluate(filePath){
+        if(fileIndex == -1){
+            eval(FetchFile(filePath))
+
+            if(!requireJsConfig.devMode){
+                loadedFiles.push(filePath);
+            }
+        }
+    }
+
+    function FetchFile(filePath){
         var httpRequest = new XMLHttpRequest();
         httpRequest.open("GET",filePath, false);
         httpRequest.send();
-        var httpResponse = httpRequest.responseText;
-        eval(httpResponse);
+        return httpRequest.responseText;
     };
 
     function normalizeFilePath(filePath){
@@ -101,9 +104,7 @@ function requireJs(){
         }
         var item = getItem(functionIdentifier, functionName);
         var filePath = normalizeFilePath(item.file);
-        if(!isFileLoaded(filePath)){
-            loadAndEvaluate(filePath);
-        }
+        LoadFile(filePath);
         item.loaded = true;
     };
 
@@ -113,9 +114,7 @@ function requireJs(){
         }
         var item = getItem(moduleIdentifier, moduleName);
         var filePath = normalizeFilePath(item);
-        if(!isFileLoaded(filePath)){
-            loadAndEvaluate(filePath);
-        }
+        LoadFile(filePath);
         item.loaded = true;
     };
 }
