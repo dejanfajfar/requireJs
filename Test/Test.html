@@ -6,9 +6,12 @@
 </head>
 <body>
     <script type="text/javascript">
-        ioc.registerFunction('RequirementA', '/Test/RequirementsA.js');
-        register('', '');
-        ioc.loadFunction('RequirementA');
+        register('jquery', 'http://code.jquery.com/jquery-1.9.1.min.js');
+        register('qunit', 'http://code.jquery.com/qunit/qunit-1.11.0.js');
+        ioc.registerFunction('qunit.foo', 'http://code.jquery.com/qunit/qunit-1.11.0.js');
+
+        ioc.load('jquery');
+        ioc.load('qunit.foo');
     </script>
 </body>
 </html>

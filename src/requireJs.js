@@ -24,13 +24,11 @@ function requireJs(){
     // Gets the item with the given identifier and name
     // Returns null if not found
     function getItem(identifier, itemName){
-        itemList.forEach(
-            function(element, index, array){
-                if(element.name == itemName && element.identifier == identifier){
-                    return element;
-                }
+        for(var elementIndex = 0; elementIndex < itemList.length; elementIndex++){
+            if(itemList[elementIndex].name === itemName && itemList[elementIndex].identifier === identifier){
+                return itemList[elementIndex];
             }
-        );
+        }
         return null;
     };
 
@@ -55,10 +53,17 @@ function requireJs(){
     };
 
     function normalizeFilePath(filePath){
-        filePath = requireJsConfig.scpriptBase + filePath;
-        if(filePath.match(".js$")){
-            filePath = filePath + ".js";
+        var externalUrlTester = new RegExp('^https?://.*.js$');
+        var javaScriptFileTester = new RegExp('.js$');
+
+        if(!javaScriptFileTester.test(filePath)){
+            filePath += ".js";
         }
+
+        if(!externalUrlTester.test(filePath)){
+            filePath = requireJsConfig.scpriptBase + filePath;
+        }
+
         return filePath;
     };
 
@@ -83,19 +88,19 @@ function requireJs(){
 
     this.load = function(name){
         if(existsInList(moduleIdentifier, name)){
-            loadModule(name);
+            this.loadModule(name);
         }
         else if(existsInList(functionIdentifier, name)){
-            loadFunction(name);
+            this.loadFunction(name);
         }
     };
 
     this.loadFunction = function(functionName){
-        if(existsInList(functionIdentifier, functionName)){
+        if(!existsInList(functionIdentifier, functionName)){
             return;
         }
         var item = getItem(functionIdentifier, functionName);
-        var filePath = normalizeFilePath(item);
+        var filePath = normalizeFilePath(item.file);
         if(!isFileLoaded(filePath)){
             loadAndEvaluate(filePath);
         }
@@ -103,7 +108,7 @@ function requireJs(){
     };
 
     this.loadModule = function(moduleName){
-        if(existsInList(moduleIdentifier, moduleName)){
+        if(!existsInList(moduleIdentifier, moduleName)){
             return;
         }
         var item = getItem(moduleIdentifier, moduleName);
