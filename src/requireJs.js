@@ -4,18 +4,16 @@
  */
 requireJsConfig = {
     'scpriptBase' : "",
-    'devMode' : true
+    'devMode' : false
 };
 
 function requireJs(){
-    var moduleIdentifier = "MODULE";
-    var functionIdentifier = "FUNCTION";
-    var itemList = new Array();
+    var resourceList = new Array();
     var loadedFiles = new Array();
 
     // Determines if the item with the given name and identifier exists in the internal list
-    function existsInList(identifier, itemName){
-        if(getItem(identifier, itemName) != null){
+    function existsInList(itemName){
+        if(getItem(itemName) != null){
             return true;
         }
         return false;
@@ -23,24 +21,20 @@ function requireJs(){
 
     // Gets the item with the given identifier and name
     // Returns null if not found
-    function getItem(identifier, itemName){
-        for(var elementIndex = 0; elementIndex < itemList.length; elementIndex++){
-            if(itemList[elementIndex].name === itemName && itemList[elementIndex].identifier === identifier){
-                return itemList[elementIndex];
+    function getItem(itemName){
+        for(var resourceIndex = 0; resourceIndex < resourceList.length; resourceIndex++){
+            if(resourceList[resourceIndex].name === itemName){
+                return resourceList[resourceIndex];
             }
         }
         return null;
     };
 
-    /**
-     *
-     * @param filePath
-     */
-    function LoadFile(filePath){
+    function loadFile(filePath){
         var fileIndex = loadedFiles.indexOf(filePath)
 
         if(fileIndex == -1){
-            eval(FetchFile(filePath))
+            eval(fetchFile(filePath))
 
             if(!requireJsConfig.devMode){
                 loadedFiles.push(filePath);
@@ -48,7 +42,7 @@ function requireJs(){
         }
     }
 
-    function FetchFile(filePath){
+    function fetchFile(filePath){
         var httpRequest = new XMLHttpRequest();
         httpRequest.open("GET",filePath, false);
         httpRequest.send();
@@ -70,54 +64,25 @@ function requireJs(){
         return filePath;
     };
 
-    this.registerFunction = function(functionName, functionFile){
-        itemList.push({
-                'name' : functionName,
-                'file' : functionFile,
-                'loaded' : false,
-                'identifier' : functionIdentifier
-            });
-    };
-
-    this.registerModule = function(moduleName, moduleFile){
-        itemList.push(
-            new {
-                name : moduleName,
-                file : moduleFile,
-                loaded : false,
-                identifier : moduleIdentifier
+    this.register = function(moduleName, moduleFile){
+        resourceList.push({
+                'name' : moduleName,
+                'file' : moduleFile,
+                'loaded' : false
             });
     };
 
     this.load = function(name){
-        if(existsInList(moduleIdentifier, name)){
-            this.loadModule(name);
-        }
-        else if(existsInList(functionIdentifier, name)){
-            this.loadFunction(name);
-        }
-    };
-
-    this.loadFunction = function(functionName){
-        if(!existsInList(functionIdentifier, functionName)){
+        if(!existsInList(name)){
             return;
         }
-        var item = getItem(functionIdentifier, functionName);
+        var item = getItem(name);
         var filePath = normalizeFilePath(item.file);
-        LoadFile(filePath);
-        item.loaded = true;
-    };
-
-    this.loadModule = function(moduleName){
-        if(!existsInList(moduleIdentifier, moduleName)){
-            return;
-        }
-        var item = getItem(moduleIdentifier, moduleName);
-        var filePath = normalizeFilePath(item);
-        LoadFile(filePath);
+        loadFile(filePath);
         item.loaded = true;
     };
 }
 
 window.ioc = new requireJs();
-window.register = ioc.registerFunction;
+window.register = ioc.register;
+window.load = ioc.load;

@@ -8,11 +8,9 @@
     <script type="text/javascript">
         register('jquery', 'http://code.jquery.com/jquery-1.9.1.min.js');
         register('qunit', 'http://code.jquery.com/qunit/qunit-1.11.0.js');
-        ioc.registerFunction('qunit.foo', 'http://code.jquery.com/qunit/qunit-1.11.0.js');
 
-        ioc.load('jquery');
-        ioc.load('jquery');
-        ioc.load('qunit.foo');
+        load('jquery');
+        load('qunit');
     </script>
 </body>
 </html>
