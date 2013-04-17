@@ -65,6 +65,12 @@ function requireJs(){
     };
 
     this.register = function(moduleName, moduleFile){
+        if(moduleName === ''){
+            throw new Error('The requirement name was empty');
+        }
+        if(moduleFile === ''){
+            throw new Error('The requirement location was empty');
+        }
         resourceList.push({
                 'name' : moduleName,
                 'file' : moduleFile,
