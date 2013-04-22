@@ -5,6 +5,9 @@ test('Script base set to default', function(){
 test('Development mode disabled by default', function(){
     equal(false, requireJsConfig.devMode, "Developer mode is disabled by default");
 });
+test('Save mode is disabled by default', function(){
+    equal(false, requireJsConfig.safeMode, "Development mode is disabled by default");
+});
 
 module('Default registrations');
 test('ioc function registered on window object', function(){
@@ -20,13 +23,13 @@ test('load function registered on window object', function(){
 module('Requirement registration');
 test('Registration with empty requirement location throws error', function(){
     throws(function(){
-        window.register('some resource', '')},
+            window.register('some resource', '')},
         /The requirement location was empty/,
         'Error raised because the requirements location was not given');
 });
 test('Registration with empty requirement name throws error', function(){
     throws(function(){
-        window.register('', 'some location')},
+            window.register('', 'some location')},
         /The requirement name was empty/,
         'Error raised because the requirement name was not given');
 });

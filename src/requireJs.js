@@ -58,36 +58,37 @@ function requireJs(){
         return filePath;
     };
 
-    this.register = function(moduleName, moduleFile){
-        if(moduleName === ''){
+    this.register = function(resourceIdentifier, resourcePath){
+        if(resourceIdentifier === ''){
             throw new Error('The requirement name was empty');
         }
-        if(moduleFile === ''){
+        if(resourcePath === ''){
             throw new Error('The requirement location was empty');
         }
         resourceList.push({
-                'name' : moduleName,
-                'file' : moduleFile,
+                'name' : resourceIdentifier,
+                'file' : normalizeFilePath(resourcePath),
                 'loaded' : false
             });
     };
 
-    this.load = function(name){
-        if(!existsInList(name)){
+    this.load = function(resourceIdentifier){
+        if(!existsInList(resourceIdentifier)){
             return;
         }
-        var item = getItem(name);
-        var filePath = normalizeFilePath(item.file);
+        var item = getItem(resourceIdentifier);
+        var filePath = item.file;
         loadFile(filePath);
         item.loaded = true;
     };
 
-    this.knows = function(itemName){
-        var resourceItem = getItem(itemName);
-        if(resourceItem == undefined){
-            return false;
-        }
-        return true;
+    this.knows = function(resourceIdentifier){
+        var resourceItem = getItem(resourceIdentifier);
+        return resourceItem == null;
+    }
+
+    this.get = function(resourceIdentifier){
+        return getItem(resourceIdentifier);
     }
 }
 
