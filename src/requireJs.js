@@ -1,17 +1,13 @@
-/**
- * Defines the dynamically changeable configuration
- * @type requireJsConfig
- */
 requireJsConfig = {
     'scpriptBase' : "",
-    'devMode' : false
+    'devMode' : false,
+    'safeMode' : false
 };
 
 function requireJs(){
     var resourceList = new Array();
     var loadedFiles = new Array();
 
-    // Determines if the item with the given name and identifier exists in the internal list
     function existsInList(itemName){
         if(getItem(itemName) != null){
             return true;
@@ -19,8 +15,6 @@ function requireJs(){
         return false;
     };
 
-    // Gets the item with the given identifier and name
-    // Returns null if not found
     function getItem(itemName){
         for(var resourceIndex = 0; resourceIndex < resourceList.length; resourceIndex++){
             if(resourceList[resourceIndex].name === itemName){
@@ -87,6 +81,14 @@ function requireJs(){
         loadFile(filePath);
         item.loaded = true;
     };
+
+    this.knows = function(itemName){
+        var resourceItem = getItem(itemName);
+        if(resourceItem == undefined){
+            return false;
+        }
+        return true;
+    }
 }
 
 window.ioc = new requireJs();
