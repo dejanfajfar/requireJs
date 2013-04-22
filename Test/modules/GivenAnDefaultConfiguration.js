@@ -23,13 +23,19 @@ test('load function registered on window object', function(){
 module('Requirement registration');
 test('Registration with empty requirement location throws error', function(){
     throws(function(){
-            window.register('some resource', '')},
+            register('some resource', '')},
         /The requirement location was empty/,
         'Error raised because the requirements location was not given');
 });
 test('Registration with empty requirement name throws error', function(){
     throws(function(){
-            window.register('', 'some location')},
+            register('', 'some location')},
         /The requirement name was empty/,
         'Error raised because the requirement name was not given');
 });
+test('Registration marks the resource as not loaded', function(){
+    register("name", "path");
+    ok(!ioc.get("name").loaded, "The resource is marked as not loaded");
+});
+
+module('Requirements ')

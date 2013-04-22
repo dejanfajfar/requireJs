@@ -44,8 +44,14 @@ function requireJs(){
     };
 
     function normalizeFilePath(filePath){
-        var externalUrlTester = new RegExp('^https?://.*.js$');
-        var javaScriptFileTester = new RegExp('.js$');
+        var externalUrlTester = new RegExp('^https?://.*.js$', 'i');
+        var javaScriptFileTester = new RegExp('.js$', 'i');
+        var scriptBaseUrlTester = new RegExp('//$', 'i');
+
+        if(requireJsConfig.scpriptBase != ""
+            && !scriptBaseUrlTester.test(requireJsConfig.scpriptBase)){
+            requireJsConfig.scpriptBase = requireJsConfig.scpriptBase + "/";
+        }
 
         if(!javaScriptFileTester.test(filePath)){
             filePath += ".js";
@@ -92,6 +98,10 @@ function requireJs(){
     }
 }
 
-window.ioc = new requireJs();
-window.register = ioc.register;
-window.load = ioc.load;
+window.requireJs = new requireJs();
+
+if(requireJsConfig.safeMode == false){
+    window.ioc = window.requireJs;
+    window.register = ioc.register;
+    window.load = ioc.load;
+}
