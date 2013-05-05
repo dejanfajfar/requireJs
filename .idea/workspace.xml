@@ -20,10 +20,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="requireJs.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="requireJs.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/requireJs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="1" selection-start="2945" selection-end="2945" vertical-scroll-proportion="0.89485216">
+            <state line="1" column="23" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -32,34 +32,7 @@
       <file leaf-file-name="GivenAnSafeModeConfiguration.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test/modules/GivenAnSafeModeConfiguration.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="3" selection-start="388" selection-end="388" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GivenAnSafeModeConfiguration.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test/Scenarios/GivenAnSafeModeConfiguration.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="30" selection-start="254" selection-end="254" vertical-scroll-proportion="-5.76">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GivenAnDefaultConfiguration.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test/modules/GivenAnDefaultConfiguration.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="45" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GivenAnScriptBase.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test/Scenarios/GivenAnScriptBase.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="25" selection-start="337" selection-end="337" vertical-scroll-proportion="-7.04">
+            <state line="20" column="60" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -68,16 +41,34 @@
       <file leaf-file-name="GivenAnScriptBase.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test/modules/GivenAnScriptBase.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="32" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0">
+            <state line="13" column="33" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GivenAnDefaultConfiguration.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test/Scenarios/GivenAnDefaultConfiguration.html">
+      <file leaf-file-name="GivenAnDefaultConfiguration.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Test/modules/GivenAnDefaultConfiguration.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="7" selection-start="0" selection-end="433" vertical-scroll-proportion="-8.96">
+            <state line="37" column="65" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requireJsTests.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Test/requireJsTests.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="11" selection-start="242" selection-end="242" vertical-scroll-proportion="-6.4">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExternalResource.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Test/Data/ExternalResource.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="5" selection-start="150" selection-end="150" vertical-scroll-proportion="0.122672506">
               <folding />
             </state>
           </provider>
@@ -101,18 +92,19 @@
       <list>
         <option value="$PROJECT_DIR$/Test/RequirementA.js" />
         <option value="$PROJECT_DIR$/Test/ProofOfConcept.js" />
-        <option value="$PROJECT_DIR$/Test/Test.html" />
         <option value="$PROJECT_DIR$/Test/TestRunner.html" />
         <option value="$PROJECT_DIR$/Test/Tests.js" />
         <option value="$PROJECT_DIR$/Test/Scenarios/GivenAnDefaultConfiguration.html" />
         <option value="$PROJECT_DIR$/Test/modules/GivenAnScriptBase.html" />
         <option value="$PROJECT_DIR$/Test/Scenarios/GivenAnScriptBase.html" />
-        <option value="$PROJECT_DIR$/Test/modules/GivenAnScriptBase.js" />
         <option value="$PROJECT_DIR$/Test/RequireJsSuite.html" />
-        <option value="$PROJECT_DIR$/Test/modules/GivenAnDefaultConfiguration.js" />
         <option value="$PROJECT_DIR$/Test/Scenarios/GivenAnSafeModeConfiguration.html" />
-        <option value="$PROJECT_DIR$/Test/modules/GivenAnSafeModeConfiguration.js" />
+        <option value="$PROJECT_DIR$/Test/modules/GivenAnDefaultConfiguration.js" />
+        <option value="$PROJECT_DIR$/Test/Test.html" />
         <option value="$PROJECT_DIR$/src/requireJs.js" />
+        <option value="$PROJECT_DIR$/Test/modules/GivenAnSafeModeConfiguration.js" />
+        <option value="$PROJECT_DIR$/Test/modules/GivenAnScriptBase.js" />
+        <option value="$PROJECT_DIR$/Test/Data/ExternalResource.js" />
       </list>
     </option>
   </component>
@@ -180,8 +172,22 @@
               <option name="myItemId" value="Test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Scenarios" />
+              <option name="myItemId" value="requireJs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="requireJs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -199,7 +205,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
+              <option name="myItemId" value="Data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -242,11 +248,11 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -316,7 +322,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22087507" sideWeight="0.6705757" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19240907" sideWeight="0.6705757" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39978677" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -389,6 +395,20 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Test/modules/GivenAnDefaultConfiguration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="45" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/modules/GivenAnScriptBase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="32" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/requireJs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="16" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0">
@@ -424,51 +444,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/Scenarios/GivenAnScriptBase.html">
+    <entry file="file://$PROJECT_DIR$/src/requireJs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="25" selection-start="337" selection-end="337" vertical-scroll-proportion="-7.04">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/Scenarios/GivenAnDefaultConfiguration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="7" selection-start="0" selection-end="433" vertical-scroll-proportion="-8.96">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/modules/GivenAnDefaultConfiguration.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="45" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/Scenarios/GivenAnSafeModeConfiguration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="30" selection-start="254" selection-end="254" vertical-scroll-proportion="-5.76">
+        <state line="1" column="23" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Test/modules/GivenAnSafeModeConfiguration.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="3" selection-start="388" selection-end="388" vertical-scroll-proportion="0.0">
+        <state line="20" column="60" selection-start="780" selection-end="780" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Test/modules/GivenAnScriptBase.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="32" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0">
+        <state line="13" column="33" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/requireJs.js">
+    <entry file="file://$PROJECT_DIR$/Test/modules/GivenAnDefaultConfiguration.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="1" selection-start="2945" selection-end="2945" vertical-scroll-proportion="0.89485216">
+        <state line="37" column="65" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/requireJsTests.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="11" selection-start="242" selection-end="242" vertical-scroll-proportion="-6.4">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/Data/ExternalResource.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="5" selection-start="150" selection-end="150" vertical-scroll-proportion="0.122672506">
           <folding />
         </state>
       </provider>

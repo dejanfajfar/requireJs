@@ -96,12 +96,17 @@ function requireJs(){
     this.get = function(resourceIdentifier){
         return getItem(resourceIdentifier);
     }
+
+    this.registerGlobals = function(){
+        window.ioc = window.register = window.load = null;
+        if(!requireJsConfig.safeMode){
+            window.ioc = window.requireJs;
+            window.register = ioc.register;
+            window.load = ioc.load;
+        }
+    }
 }
 
 window.requireJs = new requireJs();
 
-if(requireJsConfig.safeMode == false){
-    window.ioc = window.requireJs;
-    window.register = ioc.register;
-    window.load = ioc.load;
-}
+window.requireJs.registerGlobals();

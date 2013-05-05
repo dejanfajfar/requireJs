@@ -1,41 +1,41 @@
-module('Configuration default values check');
-test('Script base set to default', function(){
+module('GIVEN a default configured require js');
+
+//Default configuration checks
+test('THEN script base set to empty string', function(){
     equal("", requireJsConfig.scpriptBase, "Default script base is set to an empty string");
 });
-test('Development mode disabled by default', function(){
+test('THEN development mode is disabled', function(){
     equal(false, requireJsConfig.devMode, "Developer mode is disabled by default");
 });
-test('Save mode is disabled by default', function(){
+test('THEN safe mode is disabled by default', function(){
     equal(false, requireJsConfig.safeMode, "Development mode is disabled by default");
 });
 
-module('Default registrations');
-test('ioc function registered on window object', function(){
+//Default registrations
+test('THEN ioc function registered on window object', function(){
     ok(window.ioc, "ioc function is registered on the window object");
 });
-test('register function registered on window object', function(){
+test('THEN register function registered on windows object', function(){
     ok(window.register, "register function is registered on the window object");
 });
-test('load function registered on window object', function(){
+test('THEN load function registered on windows object', function(){
     ok(window.load, "load function is registered on the window object");
 });
 
-module('Requirement registration');
-test('Registration with empty requirement location throws error', function(){
+//Requirement registration
+test('WHEN register called with empty requirement location THEN an error is thrown', function(){
     throws(function(){
             register('some resource', '')},
         /The requirement location was empty/,
         'Error raised because the requirements location was not given');
 });
-test('Registration with empty requirement name throws error', function(){
+test('WHEN register called with empty requirement name THEN an error is thrown', function(){
     throws(function(){
             register('', 'some location')},
         /The requirement name was empty/,
         'Error raised because the requirement name was not given');
 });
-test('Registration marks the resource as not loaded', function(){
+test('WHEN register called THEN registration not marked as loaded', function(){
     register("name", "path");
     ok(!ioc.get("name").loaded, "The resource is marked as not loaded");
 });
-
-module('Requirements ')
