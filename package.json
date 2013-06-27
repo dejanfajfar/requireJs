@@ -1,7 +1,8 @@
-/**
- * Created with JetBrains WebStorm.
- * User: dejan
- * Date: 6/27/13
- * Time: 2:08 PM
- * To change this template use File | Settings | File Templates.
- */
+{
+  "name": "requireJS",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-coffee": "~0.7.0"
+  }
+}

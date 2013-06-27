@@ -1,0 +1,1 @@
+Array::remove = (element) -> @[t..t] = [] if (t = @indexOf(element)) > 1
