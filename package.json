@@ -1,9 +1,12 @@
 {
-  "name": "requireJS",
-  "version": "0.1.0",
-  "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-coffee": "~0.7.0",
-    "grunt-contrib-nodeunit": "~0.2.0"
-  }
+    "name": "requireJS",
+    "version": "0.1.0",
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-contrib-coffee": "~0.7.0",
+        "grunt-contrib-nodeunit": "~0.2.0"
+    },
+    "scripts": {
+        "test": "grunt travis --verbose"
+    }
 }
