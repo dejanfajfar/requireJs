@@ -23,7 +23,7 @@ module.exports= (grunt) ->
     'coffee:compile'
   ]
 
-  grunt.registerNpmTask 'travis', [
+  grunt.registerTask 'travis', [
     'nodeunit:all'
     'coffee:compile'
   ]
