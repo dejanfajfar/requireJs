@@ -1,6 +1,11 @@
 {
     "name": "requireJS",
     "version": "0.1.0",
+    "description": "A simple blocking js dependency manager",
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/dejanfajfar/requireJs/tree/coffeescript_rewrite"
+    },
     "devDependencies": {
         "grunt": "~0.4.1",
         "grunt-contrib-coffee": "~0.7.0",

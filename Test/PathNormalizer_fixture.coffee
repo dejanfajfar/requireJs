@@ -19,3 +19,15 @@ exports.PathNormalizerTests =
     result = normalizer.normalizeUrl()
     test.equal(result, 'http://somewhere/fileLocation.js')
     test.done()
+
+  'If resource external then no base path shuld be added' : (test) ->
+    normalizer = new PathNormalizer('http://domain/file.js', 'http://somewhere/')
+    result = normalizer.normalizeUrl()
+    test.equal(result, 'http://domain/file.js')
+    test.done()
+
+  'If resource external and not ending with .js then .js appended': (test) ->
+    normalizer = new PathNormalizer('http://domain/file', 'http://somewhere/')
+    result = normalizer.normalizeUrl()
+    test.equal(result, 'http://domain/file.js')
+    test.done()
