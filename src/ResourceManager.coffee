@@ -5,15 +5,23 @@ defaultResourceManagerOptions =
 class ResourceManager
   constructor: (options) ->
     @resources = {}
-    @options.developmentMode = options.devMode ? defaultResourceManagerOptions.developmentMode
-    @options.scriptBase = options.scriptBase ? defaultResourceManagerOptions.scriptBase
+    if options?
+      @options.developmentMode = options.devMode ? defaultResourceManagerOptions.developmentMode
+      @options.scriptBase = options.scriptBase ? defaultResourceManagerOptions.scriptBase
+    else
+      @options = defaultResourceManagerOptions
     @
   register: (name, url) ->
     resourceMetaData =
+      name : name
       url : new PathNormalizer(url, @options.scriptBase)
-      isLoaded : false
-    @resources[name].url = resourceMetaData
+      loaded : false
+    @resources[name] = resourceMetaData
   isKnown: (name) ->
     @resources[name]?
   isLoaded: (name) ->
-    @resources[name].loaded
+    result = false
+    result = true if !@resources[name]? and @resources[name].loaded
+    result
+
+module.exports = ResourceManager

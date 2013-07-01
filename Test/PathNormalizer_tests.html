@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>requireJs test suite</title>
+    <link rel="stylesheet" href="../Lib/qunit/qunit-1.11.0.css">
+</head>
+<body>
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+<script src="../Lib/qunit/qunit-1.11.0.js"></script>
+<script src="../bin/test/PathNormalizer.js"></script>
+<script>
+    module('Path normalizer default functionality');
+
+    test('Base path not ending with // should be extended', function(){
+        var normalizer = new PathNormalizer('fileLocation.js', 'http://somewhere');
+        var result = normalizer.normalizeUrl();
+        equal(result, 'http://somewhere/fileLocation.js');
+    });
+
+    test('Base path ending with // should not be extended', function(){
+        var normalizer = new PathNormalizer('fileLocation.js', 'http://somewhere/');
+        var result = normalizer.normalizeUrl();
+        equal(result, 'http://somewhere/fileLocation.js')
+    });
+
+    test('If resource location not ending with .js then .js appended', function(){
+        var normalizer = new PathNormalizer('fileLocation', 'http://somewhere/');
+        var result = normalizer.normalizeUrl();
+        equal(result, 'http://somewhere/fileLocation.js');
+    });
+
+    test('If resource external then no base path shuld be added', function(){
+        var normalizer = new PathNormalizer('http://domain/file.js', 'http://somewhere/');
+        var result = normalizer.normalizeUrl();
+        equal(result, 'http://domain/file.js');
+    });
+
+    test('If resource external and not ending with .js then .js appended', function(){
+        var normalizer = new PathNormalizer('http://domain/file', 'http://somewhere/');
+        var result = normalizer.normalizeUrl();
+        equal(result, 'http://domain/file.js');
+    });
+</script>
+</body>
+</html>

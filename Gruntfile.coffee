@@ -1,29 +1,36 @@
-module.exports= (grunt) ->
-
+module.exports = (grunt) ->
   grunt.initConfig
-    pkg : grunt.file.readJSON('package.json')
-    coffee :
-      compile :
-        options :
+    pkg: grunt.file.readJSON('package.json')
+    coffee:
+      compile:
+        options:
           join: true
-        files :
-          'bin/requireJs-<%= pkg.version %>.js' :
+        files:
+          'bin/requireJs-<%= pkg.version %>.js':
             [
               'src/PathNormalizer.coffee'
               'src/ResourceManager.coffee'
             ]
-    nodeunit :
-      all: ['Test/*_fixture.coffee']
+      forTest :
+        options :
+          bare : true
+        files :
+          'bin/test/ResourceManager.js' : 'src/ResourceManager.coffee'
+          'bin/test/PathNormalizer.js' : 'src/PathNormalizer.coffee'
+    qunit :
+      all : ['Test/*.html']
 
   grunt.loadNpmTasks 'grunt-contrib-coffee'
-  grunt.loadNpmTasks 'grunt-contrib-nodeunit'
+  grunt.loadNpmTasks 'grunt-contrib-qunit'
 
   grunt.registerTask 'default', [
-    'nodeunit:all'
+    'coffee:forTest'
+    'qunit:all'
     'coffee:compile'
   ]
 
   grunt.registerTask 'travis', [
-    'nodeunit:all'
+    'coffee:forTest'
+    'qunit:all'
     'coffee:compile'
   ]
