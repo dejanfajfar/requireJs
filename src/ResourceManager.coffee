@@ -3,14 +3,17 @@ defaultResourceManagerOptions =
   scriptBase : "~/"
 
 class ResourceManager
-  ResourceManager: (options) ->
+  constructor: (options) ->
+    @resources = {}
     @options.developmentMode = options.devMode ? defaultResourceManagerOptions.developmentMode
     @options.scriptBase = options.scriptBase ? defaultResourceManagerOptions.scriptBase
     @
-  ResourceManager: ->
-    this.knownResources = {};
-    this.loadedResources = new Array();
-  registerResource: (resource) ->
-    this.knownResources[resource.Id] = resourceIdentifier;
-  unregisterResource: (resourceName) ->
-
+  register: (name, url) ->
+    resourceMetaData =
+      url : new PathNormalizer(url, @options.scriptBase)
+      isLoaded : false
+    @resources[name].url = resourceMetaData
+  isKnown: (name) ->
+    @resources[name]?
+  isLoaded: (name) ->
+    @resources[name].loaded
