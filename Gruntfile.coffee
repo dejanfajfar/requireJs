@@ -10,6 +10,7 @@ module.exports = (grunt) ->
             [
               'src/PathNormalizer.coffee'
               'src/ResourceManager.coffee'
+              'src/ResourceNameHelper.coffee'
             ]
       forTest :
         options :
@@ -17,6 +18,7 @@ module.exports = (grunt) ->
         files :
           'bin/test/ResourceManager.js' : 'src/ResourceManager.coffee'
           'bin/test/PathNormalizer.js' : 'src/PathNormalizer.coffee'
+          'bin/test/ResourceNameHelper.js' : 'src/ResourceNameHelper.coffee'
     qunit :
       all : ['Test/*.html']
 

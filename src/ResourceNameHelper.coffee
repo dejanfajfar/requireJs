@@ -1,8 +1,7 @@
 class ResourceNameHelper
   constructor : (@name) ->
-    @namespacePattern = ///^[\S]*.*\.///
+    @module = null
   getModuleName : ->
-    if @name?
-      ""
-    else
-      @namespacePattern.match(@name)
+    nameSplit = @name.split '.'
+    @module = nameSplit[0]
+    @module

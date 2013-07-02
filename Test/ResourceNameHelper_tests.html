@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>requireJs test suite</title>
+    <link rel="stylesheet" href="../Lib/qunit/qunit-1.11.0.css">
+</head>
+<body>
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+<script src="../Lib/qunit/qunit-1.11.0.js"></script>
+<script src="../bin/test/ResourceNameHelper.js"></script>
+<script>
+    module('Default resource name helper');
+
+    test('Given a module formatted name then module retrieved', function(){
+        var nameHelper = new ResourceNameHelper('Module.Function');
+        equal(nameHelper.getModuleName(), 'Module');
+    });
+</script>
+
+</body>
+</html>
