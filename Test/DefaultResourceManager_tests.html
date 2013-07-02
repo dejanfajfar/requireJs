@@ -18,6 +18,10 @@
         }
     });
 
+    test('Default values set correctly', function(){
+        equal(false, manager.isInDevMode());
+    });
+
     test('Given a new resource the resource is known', function(){
         manager.register('testName', 'testUrl');
         ok(manager.isKnown('testName'));
@@ -26,6 +30,20 @@
     test('A new resource is not loaded automatically', function(){
         manager.register('testName2', 'testUrl');
         equal(false, manager.isLoaded('testName2'));
+    });
+
+    test('If a resource is registered twice with the same url no error should be thrown', function(){
+        var resourceName = 'duplicateResourceName';
+        var resourceUrl = 'duplicateResourceUrl';
+        manager.register(resourceName, resourceUrl);
+        manager.register(resourceName, resourceUrl);
+        ok(manager.isKnown(resourceName));
+    });
+
+    test('If existing resource registered with different URL then error raised', function(){
+        var resourceName = 'duplicationErrorResourceName';
+        manager.register(resourceName, 'url1');
+        throws(manager.register(resourceName, 'url2'));
     });
 </script>
 </body>

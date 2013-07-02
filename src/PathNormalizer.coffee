@@ -9,6 +9,3 @@ class PathNormalizer
 
   normalizeBaseUrl: (baseUrl) ->
     if ////$///.test(baseUrl) then baseUrl else baseUrl + '/'
-
-
-module.exports = PathNormalizer
